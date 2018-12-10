@@ -1,3 +1,5 @@
+@Author: Yifan Mei & Siyuan Ji
+
 For this project, we have two .c files, one is range_tree.c, and the other one is 537malloc.c
 
 537malloc.c: In this file we have our malloc537, free537, memcheck537 and realloc537 functions.
