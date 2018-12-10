@@ -1,0 +1,22 @@
+For this project, we have two .c files, one is range_tree.c, and the other one is 537malloc.c
+
+537malloc.c: In this file we have our malloc537, free537, memcheck537 and realloc537 functions.
+We also initialize the range_tree root node when user first time call malloc537. These functions 
+basically call the real c malloc, free, and realloc functions, and do some operations on the range
+tree. Siyuan Ji wrote the malloc537, free537 and memcheck537 functions and Yifan Mei wrote the realloc537.
+
+range_tree.c: This is a red_black tree structure which we have referred to some online resources, and the link
+is https://www.cnblogs.com/skywang12345/p/3624177.html. Whenever user call malloc537, we will add a node into
+the tree with some properties such as the addr of malloced mem space and the size of malloced mem. When user 
+call free537, we basically set the freeFlag of the corresponding node from one to zero. There is a more complicated
+condition when the new malloc addr covered several free nodes which we actually haven't removed from the tree(just 
+set the freeFlag to 0). In that case, we will call the nodeoverlap function written by Yifan Me to check and delete
+thoes free Nodes. When users call realloc, we do similar thing compared with malloc537, but the starting addr is 
+the return addr of real c realloc. For the last function memcheck, we will search the whole tree to see is there 
+is any node cover the memory users want to check for.
+
+We also have 2 .h files, which are the headers of our 2 .c files.
+
+This project give us some insights on memory management and red-black tree data structure.
+    
+
